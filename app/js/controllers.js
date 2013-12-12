@@ -1,18 +1,25 @@
 'use strict';
 
 /* Controllers */
-/*var visaHelperApp = angular.module('visaHelperApp', []);
 
-visaHelperApp.controller('VisaHelperCtrl', function ($scope, $http) {
-    $http.get('files/avac.json').success(function(data) {
-        $scope.avacs = data;
-    });
-  
+var visaHelperControllers = angular.module('visaHelperControllers', []);
+
+visaHelperControllers.controller('VisaHelperCtrl', ['$scope', '$http',
+ function($scope, $http) {
+     $http.get('files/avac.json').success(function(data) {
+     $scope.avacs = data;
+     });
     $scope.orderProp = 'postcode';
-});
-*/
+}]);
 
 
+visaHelperControllers.controller('AvacDetailCtrl', ['$scope', '$routeParams',
+   function($scope, $routeParams) {
+    $scope.avacId = $routeParams.avacId;
+  }]);
+
+
+/*
 function VisaHelperCtrl($scope, $http) {
   $http.get('files/avac.json').success(function(data) {
      $scope.avacs = data;
@@ -20,4 +27,6 @@ function VisaHelperCtrl($scope, $http) {
 
  $scope.orderProp = 'postcode';
 }
+*/
 
+//PhoneDetailCtrl.$inject = ['$scope', '$routeParams'];

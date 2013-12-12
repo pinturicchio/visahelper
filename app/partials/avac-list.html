@@ -1,0 +1,34 @@
+ <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    <!--Sidebar content-->
+
+                    Search: <input ng-model="query">
+                    <div id="status">Current filter: {{query}}</div>
+                    Sort by:
+                    <select ng-model="orderProp">
+                        <option value="name">Alphabetical</option>
+                        <option value="postcode">Postcode</option>
+                        <option value="-postcode">Reverse Postcode</option>
+                    </select>
+                    Current orderProp: {{orderProp}}
+                    <!-- Content of JSON file: {{avacs | json}} -->
+                </div>
+                <div class="span10">
+                    <!--Body content-->
+
+                    <ul class="avacs">
+                        <li ng-repeat="avac in avacs | filter:query | orderBy:orderProp" class="thumbnail">
+                            <a href="#/avacs/{{avac.avacId}}" class="thumb"><img ng-src="{{avac.imageUrl}}"></a>
+                            <a href="#/avacs/{{avac.avacId}}">{{avac.name}}</a>
+
+                            <p>{{avac.addr}}</p>
+                            <p>{{avac.phone}}</p>
+                            <p>{{avac.email}}</p>
+                            <p>{{"邮编: "+avac.postcode}}</p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
