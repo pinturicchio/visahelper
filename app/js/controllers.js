@@ -13,9 +13,12 @@ visaHelperControllers.controller('VisaHelperCtrl', ['$scope', '$http',
 }]);
 
 
-visaHelperControllers.controller('AvacDetailCtrl', ['$scope', '$routeParams',
-   function($scope, $routeParams) {
-    $scope.avacId = $routeParams.avacId;
+visaHelperControllers.controller('AvacDetailCtrl', ['$scope', '$routeParams', '$http',
+   function($scope, $routeParams, $http) {
+    $scope.avacPinyin = $routeParams.avacPinyin;
+    $http.get('files/' + $routeParams.avacPinyin + '.json').success(function(data) {
+    $scope.avacRegions = data;
+    });
   }]);
 
 

@@ -19,8 +19,8 @@
 
                     <ul class="avacs">
                         <li ng-repeat="avac in avacs | filter:query | orderBy:orderProp" class="thumbnail">
-                            <a href="#/avacs/{{avac.avacId}}" class="thumb"><img ng-src="{{avac.imageUrl}}"></a>
-                            <a href="#/avacs/{{avac.avacId}}">{{avac.name}}</a>
+                            <a href="#/avacs/{{avac.pinyin}}" class="thumb"><img ng-src="{{avac.imageUrl}}"></a>
+                            <a href="#/avacs/{{avac.pinyin}}">{{avac.name}}</a>
 
                             <p>{{avac.addr}}</p>
                             <p>{{avac.phone}}</p>

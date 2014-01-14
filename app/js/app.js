@@ -13,7 +13,7 @@ visaHelperApp.config(['$routeProvider',
         templateUrl: 'partials/avac-list.html',
         controller: 'VisaHelperCtrl'
       }).
-      when('/avacs/:avacId', {
+      when('/avacs/:avacPinyin', {
         templateUrl: 'partials/avac-detail.html',
         controller: 'AvacDetailCtrl'
       }).
