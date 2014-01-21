@@ -3,8 +3,8 @@
 /* App Module */
 var visaHelperApp = angular.module('visaHelperApp', [
   'ngRoute',
-  'visaHelperControllers'
-]);
+  'visaHelperControllers',
+  'avacNameFilters']);
  
 visaHelperApp.config(['$routeProvider',
   function($routeProvider) {
@@ -21,3 +21,4 @@ visaHelperApp.config(['$routeProvider',
         redirectTo: '/avacs'
       });
   }]);
+

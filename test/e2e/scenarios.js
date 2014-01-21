@@ -57,17 +57,17 @@ describe('My Visa  App', function() {
         it('should render avac specific links', function() {
             input('query').enter('bj');
             element('.avacs li a').click();
-            expect(browser().location().url()).toBe('/avacs/1');
+            expect(browser().location().url()).toBe('/avacs/beijing');
         });    
     });
     
     describe('avac detail view', function() {
  
         beforeEach(function() {
-            browser().navigateTo('../../app/index.html#/avacs/1');
+            browser().navigateTo('../../app/index.html#/avacs/beijing');
         });
         it('should display placeholder page with avacId', function() {
-            expect(binding('avacId')).toBe('1');
+            expect(binding('avacPinyin')).toBe('beijing');
         });
     });
     
